@@ -57,73 +57,60 @@
        <div id="piechart_3d" style="height: 500px; width:500px;"></div>
     </div>
   </div>
-<div class="row">
-  <div class="col-lg-10 col-lg-offset-1">
-  <h3>Product Reports</h3><br>
-  </div></div>
+  <br><br>
+  <br>
+  <div class="row">
+    <div class="col-lg-3 col-lg-offset-1">
+      <div class="small-box" style="background-color: crimson; color:white;">
+            <div class="inner">
+              <h3>65</h3>
+
+              <p>Unique Visitors</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="small-box" style="background-color: grey; color:white;">
+            <div class="inner">
+              <h3>65</h3>
+
+              <p>Unique Visitors</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="small-box" style="background-color: crimson; color:white;">
+            <div class="inner">
+              <h3>65</h3>
+
+              <p>Unique Visitors</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-lg-2 col-lg-offset-1">
+      <h1>Products</h1><br>
       <div class="info-box">
-            <span class="info-box-icon "><i class="fa fa-envelope-o" style="color: white;"></i></span>
-
-            <div class="info-box-content">
-              <h1 class="info-box-text">item1</h1>
-              <i class="fa fa-arrow-right pull-right" style="font-size: 35px;"></i>
-
-            </div>
-
-
-    </div>
-  </div>
-
-    <a href="item.html" style="color:black;">
-    <div class="col-lg-2">
-
-      <div class="info-box">
-            <span class="info-box-icon " style="background-color: crimson;"><i class="fa fa-envelope-o" style="color: white;"></i></span>
-
-            <div class="info-box-content">
-              <h1 class="info-box-text">item1</h1>
-              <i class="fa fa-arrow-right pull-right" style="font-size: 35px;"></i>
-
-            </div>
-
-
-    </div>
-       </a>
-  </div>
-    <div class="col-lg-2">
-
-      <div class="info-box">
-            <span class="info-box-icon "><i class="fa fa-envelope-o" style="color: white;"></i></span>
-
-            <div class="info-box-content">
-              <h1 class="info-box-text">item1</h1>
-              <i class="fa fa-arrow-right pull-right" style="font-size: 35px;"></i>
-
-            </div>
-
-
-    </div>
-  </div>
-    <div class="col-lg-2">
-
-      <div class="info-box">
-            <span class="info-box-icon" style="background-color: crimson;"><i class="fa fa-envelope-o" style="color: white;"></i></span>
-
-            <div class="info-box-content">
-              <h1 class="info-box-text">item1</h1>
-              <i class="fa fa-arrow-right pull-right" style="font-size: 35px;"></i>
-
-            </div>
-
-
-    </div>
-  </div>
-    <div class="col-lg-2">
-
-      <div class="info-box">
-            <span class="info-box-icon "><i class="fa fa-envelope-o" style="color: white;"></i></span>
+            <span class="info-box-icon "><i class="fa fa-envelope-o"></i></span>
 
             <div class="info-box-content">
               <h1 class="info-box-text">item1</h1>
@@ -157,35 +144,37 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {
-        'packages':['geochart'],
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-      });
-      google.charts.setOnLoadCallback(drawRegionsMap);
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+     google.charts.load('current', {
+       'packages': ['geochart'],
+       // Note: you will need to get a mapsApiKey for your project.
+       // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+       'mapsApiKey': 'AIzaSyAaBJv5QoLQ_JDOAwaNpkzF7nWDyTDYBDk'
+     });
+     google.charts.setOnLoadCallback(drawMarkersMap);
 
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ['Country', 'Popularity'],
-          ['Germany', 200],
-          ['United States', 300],
-          ['Brazil', 400],
-          ['India', 1000],
-          ['Canada', 500],
-          ['France', 600],
-          ['RU', 700]
-        ]);
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   'Population', 'Area'],
+        ['Chennai',     52192,      1],
+        ['Madurai',     52192,      1],
+        ['Delhi',     52192,      1],
+        ['Trichy',     52192,      1],
+        ['Ciampino',  38262,      1]
+      ]);
 
-        var options = {};
+      var options = {
+        displayMode: 'markers',
+        colorAxis: {colors: ['crimson', 'blue']}
+      };
 
-        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-      }
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
     </script>
-
- <script type="text/javascript">
+<script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
