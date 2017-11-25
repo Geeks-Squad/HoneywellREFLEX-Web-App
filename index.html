@@ -54,6 +54,7 @@
     <div id="chart_div" style="width: 100%; height: 400px;"></div>
   </div>
     <div class="col-lg-4 col-lg-offset-1">
+        <button type="button" class="btn btn-success btn" style="margin-left: 30%;border-radius: 5px;" data-toggle="modal" data-target="#myModal">Push Notifications</button>
        <div id="piechart_3d" style="height: 500px; width:500px;"></div>
     </div>
   </div>
@@ -135,6 +136,43 @@
     </div>
   </div>
 </div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Notification Send</h4>
+      </div>
+      <div class="modal-body">
+        <div class="box">
+
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" onsubmit="push()">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Meesage</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="message" placeholder="Enter email">
+                </div>
+               <!-- /.box-body -->
+               <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 <!-- Menu Bar -->
 </body>
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -205,6 +243,13 @@ function closeNav() {
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
         chart.draw(data, options);
+      }
+      function push() {
+           var http = new XMLHttpRequest();
+     http.open("POST", "http://128.199.81.127:5000/push_notification", true);
+     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+     var params = tab.url;
+     http.send('message=' + "Hello");
       }
     </script>
 </html>
